@@ -1,3 +1,13 @@
 def nyc_pigeon_organizer(data)
-  # write your code here!
+  pigeon_list = {}
+  data.each do |attributes, specs| 
+  	specs.each do |spec, birds|
+  		birds.each do |bird|
+  			pigeon_list[bird] ||= {}
+         	pigeon_list[bird][attributes] ||= []
+         	pigeon_list[bird][attributes] << spec.to_s
+  		end
+  	end
+  end
+  pigeon_list
 end
